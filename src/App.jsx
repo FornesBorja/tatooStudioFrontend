@@ -6,9 +6,11 @@ import { Footer } from './components/Footer/Footer'
 function App() {
   return (
    <>
-   <Header/>
-   <Body/>
-   <Footer/>
+   <div id="container">
+      <Header/>
+      <Body/>
+      <Footer/>
+   </div>
    </>
   )
 }

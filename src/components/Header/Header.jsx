@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Surfer } from '../Surfer/Surfer';
+import "./Header.css"
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ export const Header = () => {
 
   return (
     <>
-      <div className="flex justify-space-betwwen">
+      <div id="navbar" >
         <Surfer path="/" content="Home" />
         <Surfer path="/services" content="Services" />
         {token ? (
