@@ -4,6 +4,11 @@ import { NotFound } from '../../view/NotFound/NotFound';
 import { Home } from "../../view/Home/Home";
 
 export const Body = () => {
+  const passport = JSON.parse(localStorage.getItem("passport"));
+  let role = null
+  if (passport) {
+    role = passport.tokenData.role;
+  }
   return (
     <>
     <Routes>

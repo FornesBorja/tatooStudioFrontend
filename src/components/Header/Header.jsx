@@ -15,7 +15,8 @@ export const Header = () => {
   return (
     <>
       <div id="navbar" className='miltonian-tattoo-regular'>
-        <Surfer path="/" content="Home" />
+        <Surfer path="/" content="Tattoo Studio"/>
+        <div className="right-section">
         <Surfer path="/services" content="Services" />
         {token ? (
           <>
@@ -28,6 +29,7 @@ export const Header = () => {
             <div className="log-button" onClick={() => navigate("/login")}> Login </div>
           </>
         )}
+        </div>
       </div>
     </>
   );

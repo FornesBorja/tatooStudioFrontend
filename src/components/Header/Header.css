@@ -1,26 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap');
 
-#navbar{
+#navbar {
     display: flex;
-    justify-content: flex-end;
-    color:rgb(224, 216, 216);
-    background-color: black;
-    padding:2em 0em 2em 0em;
-    margin:0em;
-    width: 100vw;
-}
-#navbar div{
-    margin-right: 2em;
-    border-radius: 1em;
-    padding: 1.0em;
+    align-items: center;
+    color: rgb(224, 216, 216);
+    background-color: rgb(32, 32, 32);
+    padding: 1.5em 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box; 
 }
 
-.log-button{
+#navbar div {
+    margin-right: 2em;
+    border-radius: 1em;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.right-section {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.log-button {
     background-color: rgba(122, 39, 39, 0.627);
 }
+
 .miltonian-tattoo-regular {
     font-family: "Miltonian Tattoo", serif;
     font-weight: 400;
     font-style: normal;
-  }
-  
+}
