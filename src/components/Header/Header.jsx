@@ -15,7 +15,7 @@ export const Header = () => {
   return (
     <>
       <div id="navbar" className='miltonian-tattoo-regular'>
-        <Surfer path="/" content="Tattoo Studio"/>
+        <Surfer path="/" classAdd="bebas-neue-regular logo" content="Tattoo Studio"/>
         <div className="right-section">
         <Surfer path="/services" content="Services" />
         {token ? (
