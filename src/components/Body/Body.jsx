@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import React from 'react'
 import { NotFound } from '../../view/NotFound/NotFound';
 import { Home } from "../../view/Home/Home";
+import { Register } from "../../view/Register/Register";
 
 export const Body = () => {
   const passport = JSON.parse(localStorage.getItem("passport"));
@@ -12,8 +13,9 @@ export const Body = () => {
   return (
     <>
     <Routes>
-        <Route path="*" element={<NotFound />}/>
-        <Route path="/" element={<Home />}/>
+        <Route path="*" element={<NotFound/>}/>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/register" element={<Register/>}/>
       </Routes>
     </>
   )
