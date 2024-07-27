@@ -1,5 +1,10 @@
-import React from "react";
+import { jwtDecode } from "jwt-decode";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Input } from "../../components/Input/Input";
+import "./Login.css"
+import { loginUser } from "../../services/apiCalls";
+import { isTokenValid } from "../../utils/functios";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -18,7 +23,6 @@ export const Login = () => {
   }
 
   async function login() {
-    console.log("LOGIN");
     console.log(credentials);
     try {
       const response = await loginUser(credentials);
@@ -33,7 +37,6 @@ export const Login = () => {
         isTokenValid(decodedToken.exp);
         navigate("/profile");
       } else {
-        alert(response.message);
       }
     } catch (error) {
       console.log(error);
