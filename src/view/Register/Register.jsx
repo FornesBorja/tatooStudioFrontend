@@ -39,7 +39,7 @@ export const Register = () => {
 		}
 	}
      return (
-    <div id='register'>
+	<div id='register'>
         <h1>Register</h1>
         <Input name="firstName" label="Introduce your name" change={handleChange}/>
         <Input name="email" label="Introduce your email" change={handleChange}/>

@@ -7,7 +7,7 @@ export const Input = ({
   placeholder = "",
   click,
   change,
-  className = "",
+  className="",
   value,
   label = ""
 }) => {
