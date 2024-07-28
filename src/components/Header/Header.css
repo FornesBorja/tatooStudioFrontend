@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Miltonian+Tattoo&display=swap");
+@import url("https://use.typekit.net/vcx2muj.css");
+
+#navbar {
+  display: flex;
+  align-items: center;
+  color: rgb(224, 216, 216);
+  background-color: rgb(32, 32, 32);
+  padding: 1em 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#navbar div {
+  margin-right: 2em;
+  border-radius: 1em;
+  padding: 0.75em;
+  cursor: pointer;
+}
+
+.right-section {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.log-button {
+  background-color: rgba(122, 39, 39, 0.627);
+  font-family: "Bebas Neue", sans-serif;
+}
+.logo {
+  font-size: 2em;
+}
+.jacquard-24 {
+    font-family: 'Jacquard 24', system-ui;
+    font-size: 2em;
+}
+.germania-one {
+    font-family: "germania-one", serif;
+    font-weight: 400;
+    font-style: normal;
+}

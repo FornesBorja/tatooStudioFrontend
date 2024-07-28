@@ -1,0 +1,14 @@
+.form-input{
+    all:unset;
+    padding: 1em;
+    border-radius: 1em;
+    background-color: beige;
+    border: 0.15em,solid, rgb(17, 17, 17);
+    width: 20vw;
+    margin: 0.5em;
+}
+.button-send{
+    background-color:rgb(129, 86, 168);
+    width: auto;
+    color:azure;
+}
