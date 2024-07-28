@@ -4,7 +4,7 @@ import "./Admin.css";
 import { Input } from "../../components/Input/Input";
 
 export const Admin = () => {
-    const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([]);
 
   const passport = JSON.parse(localStorage.getItem("passport"));
   const token = passport.token;
@@ -13,29 +13,29 @@ export const Admin = () => {
     const bringAllUsers = async () => {
       try {
         const allUsers = await getAllUsers(token);
-        console.log('Response from API:', allUsers); 
+        console.log("Response from API:", allUsers);
         if (allUsers.success) {
-          console.log('Setting users data:', allUsers.data);
+          console.log("Setting users data:", allUsers.data);
           setUsers(allUsers.data);
         } else {
-          console.error('Failed to fetch users:', allUsers);
+          console.error("Failed to fetch users:", allUsers);
         }
       } catch (error) {
-        console.error('Error fetching users:', error);
+        console.error("Error fetching users:", error);
       }
     };
     bringAllUsers();
   }, [token]);
 
   const deleteUserHandler = async (e) => {
-    const id = parseInt(e.target.name, 10); 
+    const id = parseInt(e.target.name, 10);
     const res = await deleteUserById(token, id);
 
     if (res.success) {
-      const remainingUsers = users.filter(user => user.id !== id);
+      const remainingUsers = users.filter((user) => user.id !== id);
       setUsers(remainingUsers);
     } else {
-      console.error('Failed to delete user:', res.message);
+      console.error("Failed to delete user:", res.message);
     }
   };
 
@@ -70,4 +70,4 @@ export const Admin = () => {
       </div>
     </div>
   );
-}
+};
