@@ -81,7 +81,7 @@ export const Profile = () => {
         change={editInputHandler}
       />
       <p className={editting ? "hidden" : ""}>
-        Name: {profileData.lastName ? profileData.lastName : "No Disponible"}
+        Last name: {profileData.lastName ? profileData.lastName : "No Disponible"}
       </p>
       <Input
         type="text"
