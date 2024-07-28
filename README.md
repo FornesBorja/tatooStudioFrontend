@@ -2,7 +2,6 @@
   <summary>Content 📝</summary>
   <ol>
     <li><a href="#objetive">Objective</a></li>
-    <li><a href="#about">About the project</a></li>
     <li><a href="#deploy">Deploy</a></li>
     <li><a href="#stack">Stack</a></li>
     <li><a href="#local-installation">Installation</a></li>
@@ -14,10 +13,7 @@
 </details>
 
 ## Objetive
-
-
-## About
-
+The main objective was connect the api we did before to a front end made in React.
   
 ## Deploy 
 <div align="center">
@@ -32,13 +28,14 @@
 <a href="https://developer.mozilla.org/es/docs/Web/JavaScript">
     <img src= "https://img.shields.io/badge/javascipt-EFD81D?style=for-the-badge&logo=javascript&logoColor=black"/>
 </a>
+ <img src= "https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"/> 
+
  </div>
 
 ## Local installation
-1. Clonar el repositorio
+1. Clone reprository
 2. ` $ npm install `
 3. ``` $ npm run dev ```
-4. ...
 
 ## Vistas
 Home
@@ -56,9 +53,8 @@ Admin panel
 <img src="https://i.gyazo.com/66f104fae792dc0254c7192f8d94fb15.png">
 
 ## Future functionalities
-⬜ Filtar por nombre de rutina  
-⬜ Validaciones de campos en crear rutina  
-⬜ ...  
+⬜ Improved CSS.
+⬜ Create more routes to made connect more endpoints.  
 
 ## Desarrollo:
 
