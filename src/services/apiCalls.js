@@ -53,7 +53,7 @@ export const updateProfile = async (data, token) => {
 }
 
 export const getAllUsers = async (token) => {
-	const response = await fetch(`${URL}/users`, {
+	const response = await fetch(`${URL}/api/users`, {
 		method: "GET",
 		headers: {
 			"Content-Type": "application/json",
@@ -65,7 +65,7 @@ export const getAllUsers = async (token) => {
 }
 
 export const deleteUserById = async (token, id) => {
-	const response = await fetch(`${URL}/users/${+id}`, {
+	const response = await fetch(`${URL}/api/users/${+id}`, {
 		method: "DELETE",
 		headers: {
 			"Content-Type": "application/json",

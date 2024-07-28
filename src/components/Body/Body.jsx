@@ -6,12 +6,13 @@ import { Register } from "../../view/Register/Register";
 import { Login } from "../../view/Login/Login";
 import { Profile } from "../../view/Profile/Profile";
 import { Services } from "../../view/Services/Services";
+import { Admin } from "../../view/Admin/Admin";
 
 export const Body = () => {
   const passport = JSON.parse(localStorage.getItem("passport"));
   let role = null
   if (passport) {
-    role = passport.tokenData.role;
+    role = passport.tokenData.roleId;
   }
   return (
     <>
@@ -22,6 +23,8 @@ export const Body = () => {
         <Route path="/login" element={<Login/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/services" element={<Services/>}/>
+        <Route path="/appointments" element={<Services/>}/>
+        {role === 1 && <Route path="/admin" element={<Admin/>} />}
       </Routes>
     </>
   )
