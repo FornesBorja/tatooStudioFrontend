@@ -1,7 +1,28 @@
-.container.card{
-    background-color: rgb(235, 231, 225);
-    border:solid 0.2em grey; 
-    margin:1em;
-    border-radius: 2em;
-    box-shadow: 0.1em 0.3em 1em 0.5em;
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    border-radius: 1.2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 1em;
+    padding: 2em;
+    flex-direction: row !important;
+    background-color: #333; 
+}
+
+.card-container img {
+    width: 40%; 
+    height: auto; 
+    transition: transform 0.3s;
+    border-radius: 1em;
+}
+
+.card-container:hover img {
+    transform: scale(1.1);
+}
+
+.card-text {
+    color: rgb(46, 42, 42);
+    font-size: 1.2em;
+    margin-left: 1em; 
 }
