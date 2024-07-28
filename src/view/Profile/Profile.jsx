@@ -68,7 +68,7 @@ export const Profile = () => {
   } 
 
   return (
-    <div id="profile">
+    <div className="container">
       <h2>Hola, {profileData.firstName}</h2>
       <p className={editting ? "hidden" : ""}>
         Name: {profileData.firstName ? profileData.firstName : "No Disponible"}

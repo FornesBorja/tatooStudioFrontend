@@ -4,7 +4,7 @@ import "./Home.css"
 export const Home = () => {
   return (
     <>
-    <div id='home'>
+    <div className='container'>
       Hola
     </div>
     </>

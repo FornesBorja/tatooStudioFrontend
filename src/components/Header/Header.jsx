@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Surfer } from '../Surfer/Surfer';
 import "./Header.css"
+import '@fontsource/jacquard-24'
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -14,8 +15,8 @@ export const Header = () => {
 
   return (
     <>
-      <div id="navbar" className='miltonian-tattoo-regular'>
-        <Surfer path="/" classAdd="bebas-neue-regular logo" content="Tattoo Studio"/>
+      <div id="navbar" className='germania-one'>
+        <Surfer path="/" classAdd="jacquard-24" content="Tattoo Studio"/>
         <div className="right-section">
         <Surfer path="/services" content="Services" />
         {token ? (

@@ -45,7 +45,7 @@ export const Login = () => {
   }
 
   return (
-    <div id="login">
+    <div  className='container'>
       <h1>Login</h1>
       <Input name="email" label="Introduce your email" change={handleChange} />
       <Input
