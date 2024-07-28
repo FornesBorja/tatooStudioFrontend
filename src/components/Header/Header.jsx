@@ -20,8 +20,8 @@ export const Header = () => {
         <Surfer path="/services" content="Services" />
         {token ? (
           <>
-            <div className="log-button" onClick={() => localStorage.removeItem("passport")}> LOGOUT </div>
             <Surfer path="/profile" content="Profile" />
+            <div className="log-button" onClick={() => {(localStorage.removeItem("passport")); navigate("/login")}}> LOGOUT </div>
           </>
         ) : (
           <>

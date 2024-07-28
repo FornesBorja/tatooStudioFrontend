@@ -35,6 +35,7 @@ export const Login = () => {
         };
         localStorage.setItem("passport", JSON.stringify(passport));
         isTokenValid(decodedToken.exp);
+        console.log("Hola")
         navigate("/profile");
       } else {
       }

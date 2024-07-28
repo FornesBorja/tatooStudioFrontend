@@ -29,7 +29,7 @@ export const loginUser = async (credentials) => {
 }
 
 export const getProfile = async (token) => {
-	const response = await fetch(`${URL}/profile`, {
+	const response = await fetch(`${URL}/api/users/profile`, {
 		method: "GET",
 		headers: {
 			"Content-Type": "application/json",
@@ -41,7 +41,7 @@ export const getProfile = async (token) => {
 }
 
 export const updateProfile = async (data, token) => {
-	const response = await fetch(`${URL}/profile`, {
+	const response = await fetch(`${URL}/api/users/profile`, {
 		method: "PUT",
 		headers: {
 			"Content-Type": "application/json",

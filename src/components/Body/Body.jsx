@@ -4,6 +4,7 @@ import { NotFound } from '../../view/NotFound/NotFound';
 import { Home } from "../../view/Home/Home";
 import { Register } from "../../view/Register/Register";
 import { Login } from "../../view/Login/Login";
+import { Profile } from "../../view/Profile/Profile";
 
 export const Body = () => {
   const passport = JSON.parse(localStorage.getItem("passport"));
@@ -18,6 +19,7 @@ export const Body = () => {
         <Route path="/" element={<Home/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/profile" element={<Profile/>}/>
       </Routes>
     </>
   )
