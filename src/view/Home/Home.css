@@ -1,0 +1,14 @@
+img {
+    width: 50%;
+    height: auto;
+    border-radius: 1em;
+    padding: 5px;
+    background: linear-gradient(45deg, #f3ec78, #af4261);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    margin:2em;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
