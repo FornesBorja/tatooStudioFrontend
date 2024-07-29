@@ -1,74 +1,164 @@
 import React, { useEffect, useState } from "react";
+import { Select } from "../../components/Select/Select";
 import { getMyAppointments } from "../../services/apiCalls";
 
 export const Appointments = () => {
-    const [services, setServices] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const [newAppointment, setNewAppointment] = useState({
-        userId: "", // este viene del token
-        serviceId: "", // el servicio lo elegiré de un desplegable
-        date: "", // date lo sacaremos de un input type="date" (y opcionalmente input type="time")
-      });
-    useEffect(() => {
-      fetch('https://tattoo-studio-fornesb.zeabur.app/api/services')
-      .then(response => response.json())
-      .then(data => {
+  const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [artists, setArtist] = useState([]);
+  const [error, setError] = useState(null);
+  // const [appointment, setAppointments] = useState([])
+  const [newAppointment, setNewAppointment] = useState({
+    artistId: "",
+    serviceId: "",
+    date: "",
+  });
+  const fullToken = JSON.parse(localStorage.getItem("passport"));
+  const token = fullToken.token;
+
+  useEffect(() => {
+    fetch("https://tattoo-studio-fornesb.zeabur.app/api/services")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
         if (data.success && Array.isArray(data.data)) {
           setServices(data.data);
         } else {
-          console.error('Expected array but got:', data);
+          throw new Error("Unexpected response format");
         }
         setLoading(false);
       })
-      .catch(error => {
-        console.error('Error fetching data:', error);
+      .catch((error) => {
+        console.error("Error fetching data:", error);
         setError(error);
         setLoading(false);
       });
   }, []);
-  
-    if (loading) {
-      return <div>Loading...</div>;
-    }
-  
-    if (error) {
-      return <div>Error fetching data: {error.message}</div>;
-    }
-    const inputHandler = (e) => {
 
-        if (e.target.value === "Please choose a service") {
-            console.log("You cannot pass")
-            return
+  useEffect(() => {
+    fetch("https://tattoo-studio-fornesb.zeabur.app/api/users/artist")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
-        console.log(e.target.value)
-        setNewAppointment({
-          ...newAppointment,
-          [e.target.name]: e.target.value,
-        });
-      };
-      const todayFullTimeString = new Date()
+        return response.json();
+      })
+      .then((data) => {
+        if (data.success && Array.isArray(data.data)) {
+          const newArtists = data.data.map(artist => ({
+            firstName: artist.firstName,
+          }));
+          setArtist(newArtists);
+        } else {
+          throw new Error("Unexpected response format");
+        }
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
+
+  
+
+  const inputHandler = (e) => {
+    if (e.target.value === "Please choose a service"||"Please choose a artist ") {
+      console.log("You cannot pass");
+      return;
+    }
+    console.log(e.target.value);
+    setNewAppointment({
+      ...newAppointment,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // useEffect(() => {
+  //   const bringAppointments = async () => {
+  //       const allAppointments = await getMyAppointments(token);
+  //       if (allAppointments.success) {
+  //         setAppointments(allAppointments.data);
+  //       } else {
+  //         setError("Error getting Appointments.");
+  //       }
+  //     };
+      
+  //     bringAppointments();
+  //   }, [token]);
+
+  const todayFullTimeString = new Date()
     .toISOString()
     .slice(0, new Date().toISOString().lastIndexOf(":"));
+
+  if (loading) {
+    return <div className="container">Loading...</div>;
+  }
+
+  if (error) {
     return (
-        <div className="container">
+      <div className="container">Error fetching data: {error.message}</div>
+    );
+  }
+  return (
+    <div className="container">
+      {/* <div className="section">
+        <h1>Admin</h1>
+        <div className="appt-container">
+          <div className="table-row">
+            <div className="content">Appointment date</div>
+            <div className="content">Artist</div>
+            <div className="content">Service</div>
+            <div className="content">Actions</div>
+          </div>
+          {appointment.map((appt) => (
+            <div className="table-row" key={appt.id}>
+              <div className="content">{appt.appointmentDate}</div>
+              <div className="content">{appt.artistId}</div>
+              <div className="content">{appt.serviceId}</div>
+              <div className="content">
+                <Input
+                  type="button"
+                  name={user.id}
+                  className="button-send"
+                  value="🛇"
+                  click={deleteUserHandler}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div> */}
+      <div className="section">
         <input
-        type="datetime-local"
-        min={todayFullTimeString}
-        value={newAppointment.date}
-        name="date"
-        onChange={(e) => inputHandler(e)}
-      />
-      <select name="serviceId" onChange={(e) => inputHandler(e)}>
-        <option value="" disabled hidden>
-          Please choose a service
+          type="datetime-local"
+          min={todayFullTimeString}
+          value={newAppointment.date}
+          name="date"
+          onChange={inputHandler}
+        />
+        <Select
+          name="serviceId"
+          change={inputHandler}
+          optionDisable="service"
+          array={services}
+        />
+         <select name="artistId" onChange={inputHandler}>
+        <option value="" selected disabled hidden>
+          Please choose an artist
         </option>
-        {services.map((service) => (
-          <option key={service.id} value={service.id}>
-            {service.serviceName}
+        {artists.map((a) => (
+          <option key={a.id} value={a.id}>
+            {a.firstName}
           </option>
         ))}
       </select>
       </div>
-    );
+    </div>
+  );
 };
