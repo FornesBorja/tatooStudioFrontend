@@ -39,18 +39,18 @@ The main objective was connect the api we did before to a front end made in Reac
 
 ## Vistas
 Home
-<img src="https://i.gyazo.com/c8ff09eddb51ef0fb3c8793cd1907345.jpg">  
+<img src="https://i.gyazo.com/c8ff09eddb51ef0fb3c8793cd1907345.jpg"/>  
 Register
-<img src="https://i.gyazo.com/ab7309875bbbc5508e44dac2815302d6.png">
+<img src="https://i.gyazo.com/ab7309875bbbc5508e44dac2815302d6.png"/>
 Login
-<img src="https://i.gyazo.com/95ea13453c49dd832542a5abd8ee2e17.png">
+<img src="https://i.gyazo.com/95ea13453c49dd832542a5abd8ee2e17.png"/>
 Profile
-<img src="https://i.gyazo.com/1dc939b8bd41ee98dae2dbb6317dfac8.png">
-<img src="https://i.gyazo.com/07ed267ad2dbdb4d6f4e31a054549ecd.png">
+<img src="https://i.gyazo.com/1dc939b8bd41ee98dae2dbb6317dfac8.png"/>
+<img src="https://i.gyazo.com/07ed267ad2dbdb4d6f4e31a054549ecd.png"/>
 Services
-<img src="https://i.gyazo.com/da36d9757107879af0c5c1d308e26bf8.png)">
+<img src="https://i.gyazo.com/da36d9757107879af0c5c1d308e26bf8.png)"/>
 Admin panel
-<img src="https://i.gyazo.com/66f104fae792dc0254c7192f8d94fb15.png">
+<img src="https://i.gyazo.com/66f104fae792dc0254c7192f8d94fb15.png"/>
 
 ## Future functionalities
 ⬜ Improved CSS.
