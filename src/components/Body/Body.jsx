@@ -23,7 +23,7 @@ export const Body = () => {
         <Route path="/login" element={<Login/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/services" element={<Services/>}/>
-        <Route path="/appointments" element={<Services/>}/>
+        <Route path="/appointments" element={<NotFound/>}/>
         {role === 1 && <Route path="/admin" element={<Admin/>} />}
       </Routes>
     </>
