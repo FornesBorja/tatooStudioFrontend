@@ -50,6 +50,7 @@ export const Appointments = () => {
       .then((data) => {
         if (data.success && Array.isArray(data.data)) {
           const newArtists = data.data.map(artist => ({
+            id:artist.id,
             firstName: artist.firstName,
           }));
           setArtist(newArtists);
@@ -68,7 +69,7 @@ export const Appointments = () => {
   
 
   const inputHandler = (e) => {
-    if (e.target.value === "Please choose a service"||"Please choose a artist ") {
+    if (e.target.value === "") {
       console.log("You cannot pass");
       return;
     }
@@ -148,16 +149,12 @@ export const Appointments = () => {
           optionDisable="service"
           array={services}
         />
-         <select name="artistId" onChange={inputHandler}>
-        <option value="" selected disabled hidden>
-          Please choose an artist
-        </option>
-        {artists.map((a) => (
-          <option key={a.id} value={a.id}>
-            {a.firstName}
-          </option>
-        ))}
-      </select>
+        <Select
+          name="artistId"
+          change={inputHandler}
+          optionDisable="artist"
+          array={artists}
+        />
       </div>
     </div>
   );

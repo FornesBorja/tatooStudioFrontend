@@ -9,7 +9,8 @@ export const Input = ({
   change,
   className="",
   value,
-  label = ""
+  label = "",
+  disable=false
 }) => {
   return (
     <div>
@@ -23,6 +24,7 @@ export const Input = ({
         onChange={change}
         onClick={click}
         value={value}
+        disabled={disable}
         className={`form-input ${className}`}
       />{" "}
     </div>
