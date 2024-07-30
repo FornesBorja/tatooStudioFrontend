@@ -96,7 +96,7 @@ export const createAppointment = async (token, data) => {
             "Content-Type": "application/json",
             "Authorization":`Bearer ${token}`
         },
-        body: JSON.stringify({appointmentDate:data.appointmentDate, serviceId:data.serviceId,artistId:data.artistId}),
+        body: JSON.stringify({appointmentDate:data.date, serviceId:data.serviceId,artistId:data.artistId}),
     });
 
     const result = await request.json();

@@ -4,7 +4,7 @@ import "@fontsource/rochester";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { AttempsContext, AttempsProvider } from "./context/AttempsProvider.jsx";
+import {AttempsProvider } from "./context/AttempsProvider.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
