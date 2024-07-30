@@ -22,7 +22,7 @@ export const Services = () => {
 	return (
 		<div className='container row'>
 			{services.map((service, index) => (
-				<Card id={service.id} title={service.serviceName} description={service.description} />
+				<Card id={service.id} key={service.id} title={service.serviceName} description={service.description} />
 			))}
 		</div>
 	);

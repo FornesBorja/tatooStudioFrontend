@@ -7,6 +7,7 @@ import { Login } from "../../view/Login/Login";
 import { Profile } from "../../view/Profile/Profile";
 import { Services } from "../../view/Services/Services";
 import { Admin } from "../../view/Admin/Admin";
+import { Appointments } from "../../view/Appointments/Appointments";
 
 export const Body = () => {
   const passport = JSON.parse(localStorage.getItem("passport"));
@@ -23,7 +24,7 @@ export const Body = () => {
         <Route path="/login" element={<Login/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/services" element={<Services/>}/>
-        <Route path="/appointments" element={<NotFound/>}/>
+        <Route path="/appointments" element={<Appointments/>}/>
         {role === 1 && <Route path="/admin" element={<Admin/>} />}
       </Routes>
     </>

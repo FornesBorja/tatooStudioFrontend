@@ -12,3 +12,6 @@
     width: auto;
     color:azure;
 }
+.disabled{
+    opacity: 0.5;
+}
